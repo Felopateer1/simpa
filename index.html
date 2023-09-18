@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simpa Store | Games</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="bootstrap things/css/all.min.css" />
+    <link rel="stylesheet" href="bootstrap things/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="WOW-master/WOW-master/css/libs/animate.css" />
+    <link rel="shortcut icon" href="imgs/download.png" type="image/x-icon" />
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            class="imglogo"
+            src="imgs/download.png"
+            alt="imgs/download.png"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main"
+          aria-controls="main"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="main">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link p-2 p-lg-3 active"
+                aria-current="page"
+                href="index.html"
+                >Games</a
+              >
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3" href="index2.html">Apps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-2 p-lg-3" href="index3.html">Books</a>
+            </li>
+          </ul>
+          <h1 class="h1al">|</h1>
+          <a
+            class="btn rounded-pill main-btn"
+            id="login"
+            href="index4.html"
+            >Login</a
+          >
+        </div>
+      </div>
+    </nav><div
+    style="width: 100%; position: fixed; display: none; padding: 20px;"
+    id="alert"
+    class="alert alert-warning"
+    role="alert"
+  >
+     
+  </div><br>
+    <input id="searchbar" onkeyup="search_animal()" type="search"
+    name="search" placeholder="Search...">
+    
+    
+    <br />
+    <div class="top-charts-games">
+      <h3
+        style="
+          font-weight: 700;
+          text-decoration: underline;
+          text-transform: uppercase;
+          color: #e0ac00;
+        "
+      >
+        $ All Top Games
+      </h3>
+      <br /><br />
+      <div class="games">
+        
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://www.seekpng.com/png/detail/340-3407911_grand-theft-auto-san-andreas-icon.png"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">GTA san andreas</h5>
+            <a
+              href="https://download2393.mediafire.com/q6g80iecgvsgK07JQiUoRSTZ0DApTWc8yEUGu1b0bJuKIkRTBsGCpv_3DegCH3AJvpGJVkWptZ91Ff-9r8U6wmnk4A40djZnzkrCa_ebmh1NTu4PM7S4cqp5cJK0H9lfMdJqrKPN_KKjdvtQXehd6pzy365zboZAbeozUc9g3w/twdp01g1t8u68tr/Grand-Theft-Auto-San-Andreas-v2.11.32-apkvision.org.apks"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="data:image/jpeg;base64,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"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Subway Surfers</h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="imgs/Injustice_Mobile_Logo.JPG.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Injustice: Gods...</h5>
+            <a
+              href="https://d.apkpure.com/b/XAPK/com.wb.goog.injustice?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="data:image/png;base64,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"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">PUBG MOBILE   </h5>
+            <a href="https://d.apkpure.com/b/APK/com.tencent.ig?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLmVhLmdhbWUucHZ6ZnJlZV9yb3dfaWNvbl8xNjY1NDEyNjgwXzA4Nw/icon.webp?w=140&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Plants vs. Zo...™</h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.ea.game.pvzfree_row?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLkRWbG9wZXIuR3Jhbm55M19pY29uXzE2MjI3MzU1NzJfMDg1/icon.webp?w=140&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Granny 3          </h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.DVloper.Granny3?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLnJvYmxveC5jbGllbnRfaWNvbl8xNjYyMDU2MTYyXzAyMQ/icon.webp?w=106&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Roblox               </h5>
+            <a
+              href="https://d.apkpure.com/b/XAPK/com.roblox.client?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLnRhcGJsYXplLnBpenphYnVzaW5lc3NfaWNvbl8xNjgxODY3MDgwXzA4MA/icon.webp?w=106&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Good Pizza , G...</h5>
+            <a
+              href="https://d.apkpure.com/b/XAPK/com.tapblaze.pizzabusiness?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLmVhLmdwLmZpZmFtb2JpbGVfaWNvbl8xNjgxMTg2ODA1XzAxMw/icon.webp?w=106&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">FIFA Mobile (FI...</h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.ea.gp.fifamobile?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/anAua29uYW1pLnBlc2FtX2ljb25fMTY5Mzk2MjgxN18wNDI/icon.webp?w=140&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">eFootball 2024   </h5>
+            <a
+              href="https://d.apkpure.com/b/XAPK/jp.konami.pesam?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLmtpdGthZ2FtZXMuZmFsbGJ1ZGRpZXNfaWNvbl8xNjkyMjY5NjU1XzAyOQ/icon.webp?w=140&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">Stumble Guys   </h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.kitkagames.fallbuddies?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="game">
+          <div class="photoimg">
+            <img
+              style="height: 10vh; width: 10vh"
+              class="photo"
+              src="https://image.winudf.com/v2/image1/Y29tLm1pbmljbGlwLmVpZ2h0YmFsbHBvb2xfaWNvbl8xNTYxMzk3MjU5XzAyOQ/icon.webp?w=140&fakeurl=1&type=.webp"
+              alt="game"
+            />
+          </div>
+          <div class="phototext">
+            <h5 class="title" id="title">8 Ball Pool</h5>
+            <a
+              href="https://d.apkpure.com/b/APK/com.miniclip.eightballpool?version=latest"
+              ><button onclick="alertwhendownload()" class="installbut">
+                <svg
+                  id="icondown"
+                  width="26"
+                  height="26"
+                  fill="#000"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M22.158 8.883c-.739-.469-1.698-.787-2.747-.916-.311-1.833-1.135-3.4-2.403-4.56C15.663 2.178 13.885 1.5 12 1.5c-1.657 0-3.188.52-4.424 1.5a7.017 7.017 0 0 0-2.123 2.832c-1.437.203-2.671.685-3.595 1.406C.642 8.195 0 9.542 0 11.138 0 14.296 2.621 16.5 6.375 16.5h4.875V9.75h1.5v6.75h5.813c3.405 0 5.437-1.605 5.437-4.294 0-1.408-.637-2.558-1.842-3.323Z"
+                  ></path>
+                  <path
+                    d="M11.25 19.66 9 17.39l-1.06 1.08L12 22.5l4.061-4.031-1.06-1.078-2.25 2.27V16.5h-1.5v3.16Z"
+                  ></path>
+                </svg></button
+            ></a>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <div class="top-charts-games">
+      <h3
+        style="
+          font-weight: 700;
+          text-decoration: underline;
+          text-transform: uppercase;
+          color: #e0ac00;
+        "
+      >
+        $ 
+      </h3>
+      <br /><br />
+      <div class="games">
+        
+      </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- All Scripts -->
+    <script src="script.js"></script>
+    <script src="WOW-master/WOW-master/dist/wow.min.js"></script>
+    <script src="bootstrap things/js/all.min.js"></script>
+    <script src="bootstrap things/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
