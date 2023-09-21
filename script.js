@@ -16,10 +16,12 @@ function search_animal() {
   let input = document.getElementById("searchbar").value;
   input = input.toLowerCase();
   let x = document.getElementsByClassName("game");
+  let searchresultfor = document.getElementById("searchresultfor");
 
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       x[i].style.display = "none";
+      searchresultfor.innerHTML = `Search Result For "${input}" Not Found`; 
     } else {
       x[i].style.cssText = `
         display: flex;
