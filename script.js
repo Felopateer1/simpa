@@ -21,7 +21,7 @@ function search_animal() {
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       x[i].style.display = "none";
-      searchresultfor.innerHTML = `Search Result For "${input}" Not Found`; 
+      searchresultfor.innerHTML = `Search Result For "${input}"`; 
     } else {
       x[i].style.cssText = `
         display: flex;
